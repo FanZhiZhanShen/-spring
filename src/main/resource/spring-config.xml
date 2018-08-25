@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns:context="http://www.springframework.org/schema/context"
+
+       xmlns:aop="http://www.springframework.org/schema/aop"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+
+
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:property-placeholder location="jdbc.properties"></context:property-placeholder>
+    <context:component-scan base-package="com.neuedu"></context:component-scan>
+
+    <!--<bean id="logAspect" class="com.neuedu.aspect.LogAspect"></bean>-->
+
+
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+    <!--<aop:config>&lt;!&ndash;表示对aop的配置：他的元素内容是对aop的配置&ndash;&gt;-->
+        <!--<aop:aspect id="myAspect" ref="logAspect">-->
+            <!--&lt;!&ndash;引用id值为logAspect的bean&ndash;&gt;-->
+
+
+            <!--<aop:pointcut id="service" expression="execution(* com.neuedu.service.ProductService.addProduct(int,String)) and args(a,name) "></aop:pointcut>-->
+               <!--&lt;!&ndash;该标签整体表定义切入点-->
+                   <!--expression的值表:-要在那里切入切面类的内容-->
+               <!--&ndash;&gt;-->
+
+            <!--&lt;!&ndash;定义通知&ndash;&gt;-->
+            <!--&lt;!&ndash;<aop:before method="start" pointcut-ref="service"></aop:before>&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;method的值是切面类的方法名：表将切面类的那个方法作为前置通知&ndash;&gt;-->
+                      <!--&lt;!&ndash;pointcut-ref的值是切入点的id值：表将通知切入到哪一个切入点&ndash;&gt;-->
+                  <!--&lt;!&ndash;&ndash;&gt;&ndash;&gt;-->
+            <!--&lt;!&ndash;<aop:after-throwing method="throwing" throwing="as" pointcut-ref="service"></aop:after-throwing>&ndash;&gt;-->
+            <!--&lt;!&ndash;<aop:after-returning method="after_return" returning="asdas" pointcut-ref="service"></aop:after-returning>&ndash;&gt;-->
+            <!--&lt;!&ndash;<aop:after method="finish" pointcut-ref="service"></aop:after>&ndash;&gt;-->
+
+            <!--<aop:around method="ads" pointcut-ref="service"></aop:around>-->
+
+
+
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
+
+</beans>
